@@ -12,3 +12,6 @@ class UserSerializer(serializers.Serializer):
 class GameSerializer(serializers.Serializer):
     game_name = serializers.CharField(required=True)
 
+class TopKLeaderSerializer(serializers.Serializer):
+    game_id = serializers.UUIDField(required=True)
+

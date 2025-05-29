@@ -16,6 +16,10 @@ class LeaderBoardModelService:
 
         Scores.objects.create(**data)
 
+    def get_data_for_leaderboard(self):
+
+        return Scores.objects.all().values('user_id','game_id','score','timestamp')
+
 
 
 
