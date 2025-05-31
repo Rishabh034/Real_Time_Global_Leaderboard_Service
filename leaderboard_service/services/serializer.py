@@ -15,3 +15,7 @@ class GameSerializer(serializers.Serializer):
 class TopKLeaderSerializer(serializers.Serializer):
     game_id = serializers.UUIDField(required=True)
 
+class UserRankSerializer(serializers.Serializer):
+    game_id = serializers.UUIDField(required=True)
+    user_id = serializers.UUIDField(required=True)
+

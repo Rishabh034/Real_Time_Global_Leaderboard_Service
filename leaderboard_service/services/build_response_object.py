@@ -20,8 +20,7 @@ class BuildResponseObject:
             status_code.value[1] + str(description)
         )
         response_object['meta']['success'] = status_code.value[2]
-        if data:
-            response_object['result'] = data
+        response_object['result'] = data
         return response_object
 
     @staticmethod

@@ -1,5 +1,6 @@
 from django.urls import path
-from leaderboard_service.views import CreateUserView, CreateGameView, ScoreIngestionView, TopKLeadersView
+from leaderboard_service.views import  CreateUserView,CreateGameView, ScoreIngestionView, TopKLeadersView, UserRankView
+
 
 urlpatterns = [
     path('api/v1/create-user/',
@@ -9,6 +10,7 @@ urlpatterns = [
     path('api/v1/score-ingestion/',
          ScoreIngestionView.as_view(),name='score-ingestion-view'),
     path('api/v1/games/top/leaders/',
-         TopKLeadersView.as_view(), name="top-k-leaders")
-
+         TopKLeadersView.as_view(), name="top-k-leaders"),
+    path('api/v1/games/users/rank/',
+         UserRankView.as_view(), name="user-rank-based-on-game")
 ]

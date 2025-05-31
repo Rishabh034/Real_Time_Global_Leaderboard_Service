@@ -20,6 +20,10 @@ class LeaderBoardModelService:
 
         return Scores.objects.all().values('user_id','game_id','score','timestamp')
 
+    def get_data_for_leaderboard_for_window(self,cutoff_time):
+
+        return Scores.objects.all(timestap__gte = cutoff_time).values('user_id','game_id','score','timestamp')
+
 
 
 
